@@ -13,8 +13,6 @@ The tests will always use some integral number, so don't worry about that in dyn
 
 /*               Solution               */
 
-var isSquare = function(n){
-
-    return ( Math.sqrt(n) % 1 === 0 );
-    
-  }
+var isSquare = function (n) {
+    return (Math.sqrt(n) % 1 === 0);
+}
