@@ -14,7 +14,6 @@ and returns this "outlier" N. */
 function findOutlier(integers){
 
     const type = integers.reduce((acc, value) => (value % 2 == 0) ? acc + 1 : acc, 0);
-
-    return integers.find( value => ( type > 1) ? value % 2 !== 0 : value % 2 === 0);
     
+    return integers.find( value => ( type > 1) ? value % 2 !== 0 : value % 2 === 0);    
   }
