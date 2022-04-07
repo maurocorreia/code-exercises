@@ -21,3 +21,13 @@ CASE WHEN rating = 'G' THEN "Livre para todos"
      WHEN rating = 'R' THEN "Não recomendado para menores de 17 anos"
      ELSE "Proibido para menores de idade" END AS 'Público-Alvo'
 FROM sakila.film;
+
+// MATH FUNC // 
+
+SELECT ROUND(15 + (RAND() * 5));
+
+SELECT ROUND(15.7515971, 5);
+
+SELECT FLOOR(39.494);
+
+SELECT CEIL(85.234);
