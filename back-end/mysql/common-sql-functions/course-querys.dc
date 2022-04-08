@@ -49,3 +49,13 @@ SELECT MAX(length) AS Maior FROM sakila.film;
 SELECT SUM(length) AS Soma FROM sakila.film;
 
 SELECT COUNT(length) AS Total FROM sakila.film;
+
+//  GROUPING DATA // 
+
+SELECT active, COUNT(active) FROM sakila.customer GROUP BY active;
+
+SELECT store_id, SUM(active = 0) AS Inactive, SUM(active = 1) AS Active FROM sakila.customer GROUP BY store_id;
+
+SELECT rating, AVG(rental_duration) AS media FROM sakila.film GROUP BY rating;
+
+SELECT district, COUNT(district) FROM sakila.address GROUP BY district ORDER BY COUNT(district) DESC;
