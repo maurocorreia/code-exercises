@@ -59,3 +59,15 @@ SELECT store_id, SUM(active = 0) AS Inactive, SUM(active = 1) AS Active FROM sak
 SELECT rating, AVG(rental_duration) AS media FROM sakila.film GROUP BY rating;
 
 SELECT district, COUNT(district) FROM sakila.address GROUP BY district ORDER BY COUNT(district) DESC;
+
+// GROUPING DATA WITH HAVING // 
+
+SELECT rating, AVG(length)
+FROM sakila.film
+GROUP BY rating
+HAVING AVG(length) BETWEEN 115.0 AND 121.50;
+
+SELECT rating, SUM(replacement_cost)
+FROM sakila.film
+GROUP by rating
+HAVING SUM(replacement_cost) > 3950.50;
