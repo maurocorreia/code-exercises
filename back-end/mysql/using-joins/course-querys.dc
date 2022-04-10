@@ -1,0 +1,39 @@
+//  INNER JOIN  //
+
+SELECT film.actor_id, film.film_id, actor.first_name FROM sakila.film_actor AS film
+INNER JOIN sakila.actor AS actor
+ON film.actor_id = actor.actor_id;
+
+SELECT staff.first_name, staff.last_name, address.address FROM sakila.staff AS staff
+INNER JOIN sakila.address AS address
+ON staff.address_id = address.address_id;
+
+SELECT customer.customer_id, CONCAT(customer.first_name, ' ', customer.last_name) AS full_name, customer.email, address.address_id, address.address
+FROM sakila.customer AS customer
+INNER JOIN sakila.address AS address
+ON customer.address_id = address.address_id
+ORDER BY customer.first_name DESC
+LIMIT 100;
+
+SELECT CONCAT(customer.first_name, ' ', customer.last_name) AS full_name, customer.email, address.address_id, address.address, address.district
+FROM sakila.customer AS customer
+INNER JOIN sakila.address AS address
+ON customer.address_id = address.address_id
+WHERE customer.first_name LIKE '%rene%';
+
+SELECT customer.first_name,  COUNT(address.address)
+FROM sakila.customer AS customer
+INNER JOIN sakila.address AS address
+ON customer.address_id = address.address_id
+GROUP BY customer.first_name;
+
+SELECT CONCAT(staff.first_name,' ', staff.last_name) AS full_name, SUM(payment.amount) AS media FROM sakila.staff AS staff
+INNER JOIN sakila.payment AS payment
+ON staff.staff_id = payment.staff_id
+GROUP BY  CONCAT(staff.first_name,' ', staff.last_name);
+
+SELECT actor.actor_id, CONCAT(actor.first_name, ' ', actor.last_name) AS full_name, film_actor.film_id, film.title FROM sakila.actor AS actor
+INNER JOIN sakila.film_actor AS film_actor
+ON actor.actor_id = film_actor.actor_id
+INNER JOIN sakila.film AS film
+ON film_actor.film_id = film.film_id;
