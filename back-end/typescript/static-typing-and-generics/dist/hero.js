@@ -18,7 +18,6 @@ class Hero {
         console.log(`${this._name}: ${this._catchyPhrase}`);
     }
 }
-const Speedy = new Hero("Speedy", "Fast feet", Rank.B);
-Speedy._catchyPhrase = "You're late, or I'm ahead?";
+const Speedy = new Hero("Speedy", "Fast feet.", Rank.B);
+Speedy._catchyPhrase = "You're late, or I'm just too early?";
 Speedy.arrive();
-console.log(Speedy);

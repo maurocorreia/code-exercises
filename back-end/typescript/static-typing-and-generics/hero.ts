@@ -27,9 +27,7 @@ class Hero {
     }
 }
 
-const Speedy = new Hero("Speedy", "Fast feet", Rank.B);
+const Speedy = new Hero("Speedy", "Fast feet.", Rank.B);
 
-Speedy._catchyPhrase = "You're late, or I'm ahead?"
+Speedy._catchyPhrase = "You're late, or I'm just too early?"
 Speedy.arrive();
-
-console.log(Speedy);
